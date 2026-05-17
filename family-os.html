@@ -797,6 +797,17 @@ setupChips('task-chips', 'taskFilter', renderTasks);
 setupChips('chore-chips', 'choreFilter', renderChores);
 setupChips('cal-chips', 'calFilter', renderCalendar);
 
+// ── EXPOSE GLOBALS (const doesn't attach to window; inline onclick needs this) ──
+
+Object.assign(window, {
+  S, todayStr,
+  toggleTask, deleteTask, addTask,
+  openMealModal, saveMeal, delMeal, setMealDay,
+  openChoreModal, addChore, completeChore, delChore,
+  openEventModal, addEvent, delEvent,
+  openFAB, openTaskModal, closeModal,
+});
+
 // ── PWA MANIFEST ───────────────────────────────────────────────────────────
 
 const manifest = {
